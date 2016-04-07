@@ -1,0 +1,11 @@
+doctype html
+html
+  include ./_head
+  body
+    main#page.Page(class="#{pageClass || ''}")
+      .Container
+        .Container-content
+          block content
+
+    script(src="/javascripts/bundle.js")
+    block scripts

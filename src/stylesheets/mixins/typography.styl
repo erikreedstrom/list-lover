@@ -1,0 +1,55 @@
+@import '../settings'
+
+// ----------
+// Typography
+// ----------
+
+// App mixins
+body() {
+  font-family: $font-stack;
+  font-size: $unit-xsmall;
+  line-height: $unit-small;
+  font-weight: 400;
+}
+
+big-title() {
+  font-size: $unit-xlarge;
+  line-height: $unit-xxlarge;
+}
+
+title() {
+  font-weight: 400;
+  font-size: $unit-medium;
+  line-height: $unit-xlarge
+}
+
+sub-title() {
+  font-weight: 500;
+  font-size: $unit-xsmall;
+  line-height: $unit-small;
+  text-transform: uppercase;
+}
+
+lead() {
+  font-size: $unit-small;
+  line-height: $unit-small;
+}
+
+small-text() {
+  font-weight: 600;
+  font-size: $unit-xxsmall;
+  line-height: $unit-xsmall;
+}
+
+hint-text() {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 14px; /* doesn't follow 12s */
+  line-height: $unit-xsmall;
+}
+
+input-text() {
+  font-size: $unit-xsmall;
+  font-weight: 600;
+  line-height: 100%;
+}

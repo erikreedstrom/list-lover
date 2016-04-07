@@ -1,0 +1,348 @@
+.BookEntry {
+  display: flex;
+  border-bottom: 1px solid #b3c2bf;
+  padding: 3px 12px;
+  box-sizing: border-box;
+  max-height: 30px;
+}
+.BookEntry:last-of-type {
+  margin-bottom: 0;
+}
+.BookEntry--halloweenHorror {
+  border-left: 6px solid #f79e05;
+  padding-left: 6px;
+}
+.BookEntry--fridayFinance {
+  border-left: 6px solid #00de9d;
+  padding-left: 6px;
+}
+.BookEntry-title {
+  font-size: 12px;
+  line-height: 12px;
+  color: #fc2b6a;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+.BookEntry-primary {
+  flex: 1;
+  max-width: 50%;
+}
+@media only screen and (max-width: 640px) {
+  .BookEntry-date--long {
+    display: none;
+  }
+}
+.BookEntry-date--short {
+  display: none;
+}
+@media only screen and (max-width: 640px) {
+  .BookEntry-date--short {
+    display: inline;
+  }
+}
+.BookEntry-meta {
+  flex: 1;
+}
+.BookEntry-meta .Meta-title {
+  text-transform: uppercase;
+}
+.BookEntry-meta .Meta-definition {
+  font-weight: 600;
+}
+.BookList {
+  max-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.BookList-list {
+  max-height: calc(100vh - 40px) !important;
+  margin-top: 40px;
+}
+.BookList-loading {
+  margin-top: 40px;
+  height: calc(100vh - 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.BookList-loadingMsg {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 60px;
+}
+.BookListHeader {
+  height: 40px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  box-shadow: 0 0 5px #3b3a36;
+  box-sizing: border-box;
+  padding: 0 12px;
+}
+.BookListHeader-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.BookListHeader-controls span {
+  padding-right: 9px;
+}
+.BookListHeader-controls span:last-of-type {
+  padding-right: 0;
+}
+.BookListHeader-label {
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fc2b6a;
+  padding-right: 12px;
+}
+.Meta {
+  display: flex;
+}
+.Meta-group {
+  flex: 1;
+}
+.sk-folding-cube {
+  margin: 20px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  transform: rotateZ(45deg);
+}
+.sk-folding-cube .sk-cube {
+  float: left;
+  width: 50%;
+  height: 50%;
+  position: relative;
+  transform: scale(1.1);
+}
+.sk-folding-cube .sk-cube:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fc2b6a;
+  animation: sk-foldCubeAngle 2.4s infinite linear both;
+  transform-origin: 100% 100%;
+}
+.sk-folding-cube .sk-cube2 {
+  transform: scale(1.1) rotateZ(90deg);
+}
+.sk-folding-cube .sk-cube3 {
+  transform: scale(1.1) rotateZ(180deg);
+}
+.sk-folding-cube .sk-cube4 {
+  transform: scale(1.1) rotateZ(270deg);
+}
+.sk-folding-cube .sk-cube2:before {
+  animation-delay: 0.3s;
+}
+.sk-folding-cube .sk-cube3:before {
+  animation-delay: 0.6s;
+}
+.sk-folding-cube .sk-cube4:before {
+  animation-delay: 0.9s;
+}
+@-webkit-keyframes sk-foldCubeAngle {
+  0%, 10% {
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+
+  25%, 75% {
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  90%, 100% {
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+@-moz-keyframes sk-foldCubeAngle {
+  0%, 10% {
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+
+  25%, 75% {
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  90%, 100% {
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes sk-foldCubeAngle {
+  0%, 10% {
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+
+  25%, 75% {
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  90%, 100% {
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+@-o-keyframes sk-foldCubeAngle {
+  0%, 10% {
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+
+  25%, 75% {
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  90%, 100% {
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+@-ms-keyframes sk-foldCubeAngle {
+  0%, 10% {
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+
+  25%, 75% {
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  90%, 100% {
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+@keyframes sk-foldCubeAngle {
+  0%, 10% {
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+
+  25%, 75% {
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  90%, 100% {
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+html {
+  font-size: 17px;
+  font-size: 100%;
+}
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 9px;
+  line-height: 12px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  color: #3b3a36;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-size-adjust: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+main {
+  z-index: 0;
+  position: relative;
+}
+.u-hidden {
+  display: none;
+}
+a {
+  color: #7eabf5;
+  text-decoration: none;
+  font-weight: bold;
+}
+a:hover,
+a:focus,
+a:active {
+  text-decoration: underline;
+}
+ul,
+menu,
+dir {
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: normal;
+  margin: 0;
+}
+sup,
+sub {
+  font-size: 0.3em;
+}
+sup {
+  top: -1.3em;
+}
+sub {
+  bottom: -1.3em;
+}
+p {
+  margin: 0;
+}
+.Page-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Page-error .Container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Page-error .Container-content {
+  max-width: 768px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Page-error .Container-content h1 {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 60px;
+}
+.Page-error .Container-content h2 {
+  font-size: 60px;
+  line-height: 72px;
+}
+.Page-error .Container-content pre {
+  width: 100%;
+  white-space: pre-wrap;
+}

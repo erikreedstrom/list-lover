@@ -1,0 +1,7 @@
+/log/*
+!/log/.keep
+/tmp
+
+/.idea
+/data/books.json
+/node_modules

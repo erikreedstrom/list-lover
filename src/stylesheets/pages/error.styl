@@ -1,0 +1,21 @@
+@import '../settings'
+@import '../mixins/page-container'
+
+.Page-error {
+  container()
+
+  .Container-content {
+    h1 {
+      title()
+    }
+
+    h2 {
+      big-title()
+    }
+
+    pre {
+      width: 100%;
+      white-space: pre-wrap;
+    }
+  }
+}

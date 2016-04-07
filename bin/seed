@@ -1,0 +1,57 @@
+#!/usr/bin/env node
+'use strict';
+
+var ProgressBar = require('progress');
+var jsonfile = require('jsonfile');
+var genTitle = require('../lib/random-title');
+
+var argv = require('minimist')(process.argv.slice(2));
+
+if (!argv.i) {
+  console.warn('Please specify number of iterations with `-i`.');
+  process.exit(1);
+}
+
+if (!argv.s) {
+  console.warn('Using random seed.')
+}
+
+var size = argv.i;
+var seed = argv.s || Math.floor(Math.random() * 100000).toString();
+
+console.info(`Generating ${size} records with seed '${seed}'.`);
+
+var chance = require('chance').Chance(seed);
+var bar = new ProgressBar('Progress [:bar] :percent :etas', {
+  complete: '=',
+  incomplete: ' ',
+  width: 20,
+  total: size
+});
+
+var GENRES = ['horror','finance','steampunk','fantasy'];
+
+var books = [];
+var i = size+1;
+while(--i) {
+  var gender = chance.gender();
+  var genre = chance.pickone(GENRES);
+  var book = {
+    id: (size-i),
+    name: genTitle(genre, seed + "_" + i),
+    author: {
+      name: chance.last() + ", " + chance.first({ gender: gender }),
+      gender: gender
+    },
+    genre: genre.charAt(0).toUpperCase() + genre.slice(1),
+    published: chance.date({ year: chance.year({min: 1982, max: 2016}) })
+  };
+  books.push(book);
+
+  // Advance progress
+  bar.tick(1);
+}
+
+console.log('Writing File...');
+var file = __dirname + '/../data/books.json';
+jsonfile.writeFileSync(file, books, {spaces: 2});

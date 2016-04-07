@@ -1,0 +1,69 @@
+@import '../settings'
+@import '../mixins/typography'
+
+.BookEntry {
+  display: flex;
+
+  border-bottom: 1px solid $border-color;
+  padding: 3px $unit-small;
+  box-sizing: border-box;
+
+  // XXX Max css pixel values are ~33554400px for most modern browsers.
+  // This limits the height given one needs to render a fully populated
+  // list of 1mm rows.
+  max-height: 30px;
+}
+
+.BookEntry:last-of-type {
+  margin-bottom: 0;
+}
+
+.BookEntry--halloweenHorror {
+  border-left: $unit-xxsmall solid $orange;
+  padding-left: $unit-xxsmall;
+}
+
+.BookEntry--fridayFinance {
+  border-left: $unit-xxsmall solid $green;
+  padding-left: $unit-xxsmall;
+}
+
+.BookEntry-title {
+  lead()
+  color: $red;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+
+.BookEntry-primary {
+  flex: 1;
+  max-width: 50%;
+}
+
+.BookEntry-date--long {
+  +below('s') {
+    display: none;
+  }
+}
+
+.BookEntry-date--short {
+  display: none;
+
+  +below('s') {
+    display: inline;
+  }
+}
+
+.BookEntry-meta {
+  flex: 1;
+}
+
+.BookEntry-meta .Meta-title {
+  text-transform: uppercase;
+}
+
+.BookEntry-meta .Meta-definition {
+  font-weight: 600;
+}
